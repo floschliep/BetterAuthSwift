@@ -26,8 +26,8 @@ public final class CookieStorage: HTTPCookieStorage, CookieStorageProtocol,
     self.loadCookiesFromKeychain()
   }
 
-  internal override init() {
-    self.keychain = KeychainStorage()
+  public init(keychainAccessGroup: String? = nil) {
+    self.keychain = KeychainStorage(accessGroup: keychainAccessGroup)
     super.init()
     self.loadCookiesFromKeychain()
   }
