@@ -65,7 +65,7 @@ class OAuthHandler: NSObject {
       }
 
       webAuthSession?.presentationContextProvider = self
-      webAuthSession?.prefersEphemeralWebBrowserSession = false
+      webAuthSession?.prefersEphemeralWebBrowserSession = true
       webAuthSession?.start()
     }
   }
