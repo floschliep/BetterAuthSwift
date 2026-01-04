@@ -35,7 +35,7 @@ public final class CookieStorage: HTTPCookieStorage, CookieStorageProtocol,
   public func getBetterAuthCookie() -> HTTPCookie? {
     return withLock {
       _cookieStore.first { cookie in
-        cookie.name == betterAuthSessionCookieKey && !isExpired(cookie)
+        cookie.name.contains("session_token") && !isExpired(cookie)
       }
     }
   }
